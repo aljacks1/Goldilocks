@@ -2,29 +2,26 @@ package com.ashton.goldilocks;
 import java.util.*;
 import java.lang.*;
 /**
- *        // Declare Scanner variable in
- *         // Next double tempFloat no need to use ints as all ints are doubles
- *         // Any wonky input String Error
- *         // I'll implement this using switches and then for loops Then use an interface to demonstrate polymorphism
- *         // I'll write Tests and Documentation too
+ * Goldilocks
+ * This program takes input from the user in variable temperature of type double
+ * Program outputs Strings "Too Hot!" "Too Cold!" or "Just Right" depending on the value of temperature
+ * @author Ashton Jackson
+ * @version 1.0
+ * @since 6.10.2018
  */
 public class Goldilocks {
     public static void main(String[] args) {
-       Scanner in = new Scanner(System.in);
-        System.out.println(in);
+       Scanner in = new Scanner(System.in); // This takes input from the user directly from the console
 
         System.out.println("Goldilocks is hungry, enter a porridge temperature:");
-        String temperature = in.next();
-        if (!in.hasNextDouble()) try {
-            double newTemp = Double.valueOf(temperature);//try casting temperature as a double
-        } catch (NumberFormatException e) {
-
-            System.out.println("Temperatures are numbers! Please enter a Number!");
+        double temperature = in.nextDouble(); //Keyboard input, numbers only, will throw exception if anything else
+        if (temperature > 90) { //chose this number randomly
+            System.out.println("Too Hot!");
+        } else if (temperature < 80){ //also chose this number randomly must be below previous number
+            System.out.println("Too Cold!");
+        } else {
+            System.out.println("Just Right");
         }
-        //return;
-        //System.out.println(temperature);
-
-
 
     }
 }
